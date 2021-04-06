@@ -12,3 +12,5 @@ module.exports = {
     return `<span for="img" aria-label="book">${book}</span>`;
   },
 };
+
+// session code to check if user is logged in.
