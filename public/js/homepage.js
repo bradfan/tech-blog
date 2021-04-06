@@ -1,0 +1,1 @@
+// query selector on "btn" from login.handlebars to open screen (?) Plan is to create post and reply boxes and buttons dynamically to fill divs in homepage handlebars. User can post and submit here plus reply and submit here.

@@ -1,1 +1,1 @@
-// query selector on "btn" from login.handlebars to open screen (?) Plan is to create post and reply boxes dynamically to fill divs in dashboard handlebars. Remember that dashboard is for past posts and replies
+//  Remember that dashboard is for past posts and replies. So the user can view past posts and reply only
