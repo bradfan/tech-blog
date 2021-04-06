@@ -44,3 +44,5 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+// // login.js works with userRoutes.js and login.handlebars

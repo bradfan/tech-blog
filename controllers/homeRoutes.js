@@ -31,3 +31,5 @@ router.get('/login', (req, res) => {
 
 module.exports = router;
 
+// homeRoutes.js works with homepage.js and homepage handlebars with the post and reply models.
+// much of the existing code will be moved or deleted

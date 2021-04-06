@@ -22,3 +22,5 @@ const loginFormHandler = async (event) => {
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
+
+  // login.js works with userRoutes.js and login.handlenbars
