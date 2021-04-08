@@ -15,11 +15,17 @@
     </h1>
     
     <nav>
-    <a href="/">Home</a>
+   <h3><a href="/">Home</a></h3>
     </nav>
     <nav>
-    <a href="/dashboard">Dashboard</a>
+   <h3><a href="/dashboard">Dashboard</a></h3>
   </nav>
+  
+  {{#if logged_out}}
+    <nav>
+      <button class="btn" id="logout">login</button>
+    </nav>
+    {{/if}}
   
   
     {{#if logged_in}}
