@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
 router.post("/signup", async (req,res) => {
   const userData = await User.create (req.body);
 
@@ -11,9 +12,9 @@ router.post("/signup", async (req,res) => {
 });
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login',  async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { password: req.body.password } });
 
     if (!userData) {
       res
@@ -62,4 +63,4 @@ router.post('/logout', (req, res) => {
 
 module.exports = router;
 
-// // login.js works with userRoutes.js and login
+// // login.js works with userRoutes.js and login.handlebars
