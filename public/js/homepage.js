@@ -3,8 +3,9 @@
 const savePost = async (event) => {
     event.preventDefault();
   
-    const title = document.querySelector('#submit-title').value;
-    const content = document.querySelector('#submit').value;
+    //const title = document.querySelector('#submit-title').value;
+    const title = "test title"
+    const content = document.querySelector('.form-input').value;
   
     if (title && content) {
       const response = await fetch('/api/post', {
@@ -14,18 +15,22 @@ const savePost = async (event) => {
       });
     //   document.location.replace("/dashboard")
     }
-    document.addEventListener("click",replyBox);
-    const replyBox = document.createElement("div");
-    replyContainer.append(replyBox)
-    const text = document.createElement("textarea");
-    replyContainer.append(text);
-    const replyBtn = document.createElement("button");
-    replyBox.append(replyBtn);
+
+    // document.addEventListener("click",replyBox);
+    // const replyBox = document.createElement("div");
+    // replyContainer.append(replyBox)
+    // const text = document.createElement("textarea");
+    // replyContainer.append(text);
+    
 
     // appendChild(?)
 
 
   };
+
+  document
+      .querySelector("#subpost")
+      .addEventListener('submit', savePost)
 
  
 
