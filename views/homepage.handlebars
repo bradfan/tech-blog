@@ -1,12 +1,20 @@
 {{#each users as |user| }}
 <div class="row align-center mb-5">
   <div class="form-group">
-  <h2 id="post">What's on your mind {{user.name}}?</h2> 
+    {{!-- add title to post with id of "submit-title--}}
+  <h2 id="post">{{user.name}}:</h2> 
      <textarea class="form-input" maxlength="500"></textarea>
+     <button id="subpost" class="btn btn-primary" type="submit">Submit your post!</button>
      {{!-- add "post" button to post --}}
-     {{!-- add reply text area with "reply" button to reply --}}
-    <textarea class="form-input" maxlength="500"></textarea>
   </div>
+
+    <div id="burrito">
+       <div id="taco">
+
+       </div>
+       {{!-- dynamically create reply in FE homepage.js --}}
+    </div>
+  
 </div>
 {{/each}}
 

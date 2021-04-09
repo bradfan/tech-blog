@@ -23,7 +23,7 @@ const loginFormHandler = async (event) => {
 // add qselector, event listener to new button on handlebars
 document
   .querySelector('#login')
-  .addEventListener('click', loginFormHandler);
+  .addEventListener('click', signupFormHandler);
 // add loginSignUp function
 const signupFormHandler = async(event) => {
   event.preventDefault();
