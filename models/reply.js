@@ -27,10 +27,10 @@ Reply.init(
     },
     {
       sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      modelName: "reply",
     }
 )
-
-
-
 
 module.exports = Reply;
