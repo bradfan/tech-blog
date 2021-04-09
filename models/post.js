@@ -26,7 +26,10 @@ Post.init(
          }
     },
     {
-      sequelize
+      sequelize,
+      timesatmps: false,
+      freezeTableName: true,
+      modelName: "post",
     }
 )
 
