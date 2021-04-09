@@ -12,15 +12,21 @@ const savePost = async (event) => {
         body: JSON.stringify({ title, content }),
         headers: { 'Content-Type': 'application/json' },
       });
-      document.location.replace("/dashboard")
+    //   document.location.replace("/dashboard")
     }
+    document.addEventListener("click",replyBox);
+    const replyBox = createElement("div");
+    replyContainer.append(replyBox)
+    const text = createElement("textarea");
+    replyContainer.append(text);
+    const replyBtn = createElement("button");
+    replyBox.append(replyBtn);
+
+
   };
 
-  const replyBox = async (event) => {
-      event.preventDefault();
-    //   create reply element to go into "taco" div
-  }
+ 
 
-// create function to save reply and generate next reply box in "taco" div
+// create function to save reply and generate next reply box in "replyContainer" div
 
 // // homeRoutes.js works with homepage.js and homepage handlebars with the post and reply models.
