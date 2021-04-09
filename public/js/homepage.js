@@ -15,12 +15,14 @@ const savePost = async (event) => {
     //   document.location.replace("/dashboard")
     }
     document.addEventListener("click",replyBox);
-    const replyBox = createElement("div");
+    const replyBox = document.createElement("div");
     replyContainer.append(replyBox)
-    const text = createElement("textarea");
+    const text = document.createElement("textarea");
     replyContainer.append(text);
-    const replyBtn = createElement("button");
+    const replyBtn = document.createElement("button");
     replyBox.append(replyBtn);
+
+    // appendChild(?)
 
 
   };
