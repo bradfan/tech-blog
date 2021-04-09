@@ -14,13 +14,19 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
+      console.log(await response.json());
       alert('Failed to log in');
     }
   }
 };
+// add loginSignUp function
+
+// submit to signup instead of login
+const signupFormHandler = ( ) => {};
 
 document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+  .querySelector('#login')
+  .addEventListener('click', loginFormHandler);
+  // add qselector, event listener to new button on handlebars
 
   // login.js works with userRoutes.js and login.handlenbars

@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     });
 
     const users = userData.map((project) => project.get({ plain: true }));
-    console.log(users);
+    console.log('Users: ', users);
 
     res.render('homepage', {
       users,

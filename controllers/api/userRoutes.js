@@ -14,8 +14,19 @@ router.post("/signup", async (req,res) => {
 
 router.post('/login',  async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { password: req.body.password } });
-
+     //add if they both don't exist, then create new
+     if (!req.body.userName || !req.body.password) {
+      res
+      .status(400)
+      .json({message: `Incorrect user name and password; please try again`})
+    }
+    
+    const userData = await User.findOne({
+      where: {
+        name: req.body.userName,
+      }
+    });
+  
     if (!userData) {
       res
         .status(400)
@@ -31,13 +42,7 @@ router.post('/login',  async (req, res) => {
         .json({ message: 'Incorrect user name or password, please try again' });
       return;
     }
-    //add if they both don't exist, then create new
-    if (!userName && password) {
-      res
-      .status(400)
-      .json({message: `Incorrect user name and password; please try again`})
-    }
-    
+   
 
     req.session.save(() => {
       req.session.user_id = userData.id;
