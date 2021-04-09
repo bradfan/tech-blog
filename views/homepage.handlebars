@@ -1,11 +1,10 @@
 {{#each users as |user| }}
 <div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{user.name}}</h2>
-  </div>
   <div class="form-group">
-    <label for="post">What's on your mind?</label>
-
+  <h2 id="post">What's on your mind {{user.name}}?</h2> 
+     <textarea class="form-input" maxlength="500"></textarea>
+     {{!-- add "post" button to post --}}
+     {{!-- add reply text area with "reply" button to reply --}}
     <textarea class="form-input" maxlength="500"></textarea>
   </div>
 </div>
