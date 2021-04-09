@@ -1,8 +1,8 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const userName = document.querySelector('#user-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const userName = document.querySelector('#user').value.trim();
+  const password = document.querySelector('#password').value.trim();
 
   if (userName && password) {
     const response = await fetch('/api/users/login', {
@@ -19,14 +19,35 @@ const loginFormHandler = async (event) => {
     }
   }
 };
-// add loginSignUp function
 
-// submit to signup instead of login
-const signupFormHandler = ( ) => {};
-
+// add qselector, event listener to new button on handlebars
 document
   .querySelector('#login')
   .addEventListener('click', loginFormHandler);
-  // add qselector, event listener to new button on handlebars
+// add loginSignUp function
+const signupFormHandler = async(event) => {
+  event.preventDefault();
+
+  const userName = document.querySelector('#user').value.trim();
+  const password = document.querySelector('#password').value.trim();
+  if (userName && password) {
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      body: JSON.stringify({ userName, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      console.log(await response.json());
+      alert('Failed to log in');
+    }
+  }
+
+};
+
+
+  
 
   // login.js works with userRoutes.js and login.handlenbars
