@@ -1,16 +1,22 @@
-{{!-- will be for past posts and replies --}}
-<h2>Past Tech!</h2>
-{{#each}}
-<div class="post-container" id="post">
-<label>What's On Your Mind?</label>
-</div>
+{{!-- will be for individual posts and replies --}}
+{{#each users as |user| }}
+<div class="row align-center mb-5">
+  <div class="form-group">
 
-<div class="reply-container" id="reply">
-<label>Reply:</label>
+  <h2 id="post">{{user.name}}:</h2> 
+   <div id="title">
+      <input class="submit-title" type="title" id="submit-title"/>
+   </div>
+
+     <textarea class="form-input" maxlength="500"></textarea>
+     <button id="subpost" class="btn btn-primary" type="submit">Reply</button>
+  </div>
+
 </div>
 {{/each}}
 
 <script src="/js/dashboard.js"></script>
+{{!-- home page shows posts and people can reply only. Dashboard is where individuals can make posts and reply to their own posts --}}
 {{!-- talks to front end javascript (browser) communicates with the server through the fetch function --}}
 
 {{!-- // dashboard.js works with dashboard.handlebars and dashboard route.js as well as post and reply models --}}
