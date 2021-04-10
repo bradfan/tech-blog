@@ -16,7 +16,7 @@ Reply.init(
           type: DataTypes.STRING,
           allowNull: false,  
         },
-        post:{
+        reply:{
           type: DataTypes.STRING,
           allowNull: false, 
          },
