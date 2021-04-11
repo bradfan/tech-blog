@@ -8,3 +8,7 @@ header {
     display: flex;
 
 }
+.post {
+    border-radius: 10px;
+    border:black
+}
