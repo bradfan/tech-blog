@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/:id', async (req, res) => {
   try {
-    const userData = await User.findAll({
+    const userData = await User_id.findAll({
       attributes: { exclude: ['password'] },
       order: [['name', 'ASC']],
     });
