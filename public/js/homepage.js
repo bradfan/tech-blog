@@ -3,8 +3,8 @@
 const savePost = async (event) => {
     event.preventDefault();
   
-    //const title = document.querySelector('#submit-title').value;
-    const title = "test title"
+    const title = document.querySelector('#submit-title').value;
+    // const title = "test title"
     const content = document.querySelector('.form-input').value;
   
     if (title && content) {

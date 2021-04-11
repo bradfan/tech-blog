@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// adding withAuth to the line below breaks the code. Why?
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
