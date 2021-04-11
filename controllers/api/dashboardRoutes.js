@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Post, Reply } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/:id', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const userData = await User_id.findAll({
+    const userData = await User.id.findAll({
       attributes: { exclude: ['password'] },
       order: [['name', 'ASC']],
     });
@@ -20,4 +20,8 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+module.exports = router;
+
+
+// post routes will require an querySelector and an eventListener for both "post" and "reply" buttons (dashboard js). Then it needs to save an populate the text area on the handlebars
 // // dashboard.js works with dashboard.handlebars and dashboard route.js as well as post and reply models

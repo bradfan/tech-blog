@@ -17,14 +17,10 @@ const savePost = async (event) => {
     //   document.location.replace("/dashboard")
     }
 
-    // document.addEventListener("click",replyBox);
-    // const replyBox = document.createElement("div");
-    // replyContainer.append(replyBox)
-    // const text = document.createElement("textarea");
-    // replyContainer.append(text);
+    
     
 
-    // appendChild(?)
+  
 
 
   };

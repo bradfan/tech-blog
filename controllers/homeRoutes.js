@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// adding withAuth to the line below breaks the code. Why?
+// adding withAuth to the line below changes homepage to login and won't get login - something wrong with log in.
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
