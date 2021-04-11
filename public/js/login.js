@@ -1,4 +1,5 @@
 const loginFormHandler = async (event) => {
+  alert()
   event.preventDefault();
 
   const userName = document.querySelector('#user').value.trim();
@@ -10,20 +11,18 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ userName, password }),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(response)
 
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      console.log(await response.json());
-      alert('Failed to log in');
-    }
+    // if (response.ok) {
+    //   // document.location.replace('/');
+    // } else {
+       console.log(await response.json());
+    //   alert('Failed to log in');
+    // }
   }
 };
 
-// add qselector, event listener to new button on handlebars
-document
-  .querySelector('#login')
-  .addEventListener('click', signupFormHandler);
+
 // add loginSignUp function
 const signupFormHandler = async(event) => {
   event.preventDefault();
@@ -46,6 +45,16 @@ const signupFormHandler = async(event) => {
   }
 
 };
+
+// add qselector, event listener to new button on handlebars
+document
+  .querySelector('#login')
+  .addEventListener('click', loginFormHandler);
+
+  // add qselector, event listener to new button on handlebars
+document
+.querySelector('#signup')
+.addEventListener('click', signupFormHandler);
 
 
   

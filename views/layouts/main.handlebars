@@ -12,30 +12,31 @@
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <div class="containerOne">
-    <h1>
-      Tech Talk
-    </h1>
-     </div>
+      <h1>
+        Tech Talk
+      </h1>
+    </div>
     <div class="containerTwo">
-    <nav>
-   <h3><a href="/">Home</a></h3>
-    </nav>
+      <nav>
+        <h3><a href="/">Home</a></h3>
+      </nav>
     </div>
 
-<div class="containerThree">
+    <div class="containerThree">
+      <nav>
+        <h3><a href="/dashboard">Dashboard</a></h3>
+      </nav>
+    </div>
+
+    {{#unless isLoggedIn}}
     <nav>
-   <h3><a href="/dashboard">Dashboard</a></h3>
-  </nav>
-  </div>
-  
-  {{#if logged_out}}
-    <nav>
-      <button class="btn" id="logout">login</button>
+      <h3><a href="/login">Login</a></h3>
+     
     </nav>
-    {{/if}}
-  
-  
-    {{#if logged_in}}
+    {{/unless}}
+
+
+    {{#if isLoggedIn}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
@@ -45,10 +46,10 @@
     {{{ body }}}
   </main>
   <footer>
-      
+
   </footer>
 
-  {{#if logged_in}}
+  {{#if isLoggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
