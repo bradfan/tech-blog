@@ -1,38 +1,23 @@
 // query selector on "btn" from login.handlebars to submit post to db then dynamically create reply options to fill div in homepage handlebars. User can post and submit here plus reply and submit here.
 
-const savePost = async (event) => {
-    event.preventDefault();
+const saveReply = async (event) => {
+  event.preventDefault();
+
   
-    const title = document.querySelector('#submit-title').value;
-    // const title = "test title"
-    const content = document.querySelector('.form-input').value;
-  
-    if (title && content) {
-      const response = await fetch('/api/post', {
-        method: 'POST',
-        body: JSON.stringify({ title, content }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+  // const title = "test title"
+  const content = document.querySelector(".reply-input").value;
+
+  if (content) {
+    const response = await fetch("/api/post", {
+      method: "POST",
+      body: JSON.stringify({ content }),
+      headers: { "Content-Type": "application/json" },
+    });
     //   document.location.replace("/dashboard")
-    }
+  }
+};
 
-    // document.addEventListener("click",replyBox);
-    // const replyBox = document.createElement("div");
-    // replyContainer.append(replyBox)
-    // const text = document.createElement("textarea");
-    // replyContainer.append(text);
-    
-
-    // appendChild(?)
-
-
-  };
-
-  document
-      .querySelector("#subpost")
-      .addEventListener('submit', savePost)
-
- 
+document.querySelector("#subpost").addEventListener("click", saveReply);
 
 // create function to save reply and generate next reply box in "replyContainer" div
 

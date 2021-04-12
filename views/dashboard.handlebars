@@ -1,5 +1,6 @@
 {{!-- will be for individual posts and replies --}}
-
+{{!-- {{#each posts as |post| }} --}}
+{{#each user.name}}
 <div class="row align-center mb-5">
   <div class="form-group">
 
@@ -13,7 +14,7 @@
   </div>
 
 </div>
-
+{{/each}}
 
 <script src="/js/dashboard.js"></script>
 {{!-- home page shows posts and people can reply only. Dashboard is where individuals can make posts and reply to their

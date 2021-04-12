@@ -1,16 +1,16 @@
 {{#each posts as |post| }}
 <div class="row align-center mb-5">
   <div class="form-group">
-  <h2 id="name">{{post.name}}:</h2> 
-  <h4 id="title">Title: {{post.title}}</h4> 
-  <div class="post">
-    <h5>"{{post.post}}"</h5> 
-  </div>
-  <div class="reply">
-    <textarea class="form-input" maxlength="500"></textarea>
-   <button id="subpost" class="btn btn-primary" type="submit">Reply</button>
-  </div>
- 
+    <h2 id="name">{{post.name}}:</h2>
+    <h4 id="title">Title: {{post.title}}</h4>
+    <div class="post">
+      <h5>"{{post.post}}"</h5>
+    </div>
+    <div class="reply">
+      <textarea class="reply-input" maxlength="500"></textarea>
+      <button id="subpost" class="btn btn-primary" type="submit">Reply</button>
+    </div>
+
   </div>
 </div>
 {{/each}}
@@ -19,13 +19,13 @@
 <div class="row align-center mb-5">
   <div class="form-group">
 
-  <h2 id="post">{{user.name}}:</h2> 
-   <div id="title">
-      <input class="submit-title" type="title" id="submit-title"/>
-   </div>
+    <h2 id="post">{{user.name}}:</h2>
+    <div id="title">
+      <input class="submit-title" type="title" id="submit-title" />
+    </div>
 
-     <textarea class="form-input" maxlength="500"></textarea>
-     <button id="subpost" class="btn btn-primary" type="submit">Reply</button>
+    <textarea class="form-input" maxlength="500"></textarea>
+    <button id="subpost" class="btn btn-primary" type="submit">Reply</button>
   </div>
 
 </div>
@@ -33,6 +33,10 @@
 
 <script src="/js/homepage.js"></script>
 
-{{!-- home page shows posts and people can reply only. Dashboard is where individuals can make posts and reply to their own posts --}}
-{{!-- this page will show first but when any other links are clicked on then they are prompted to sign up or sign in. This means all the links are present when the page first appears. Navigation links from here include "dashboard" "hompage" and "log in/out."" A selactAllQuery for prompt like on the password generator(?) must include Navigation links so look at the museum examples for that. Since they are shown first there is no need to hide them--}}
+{{!-- home page shows posts and people can reply only. Dashboard is where individuals can make posts and reply to their
+own posts --}}
+{{!-- this page will show first but when any other links are clicked on then they are prompted to sign up or sign in.
+This means all the links are present when the page first appears. Navigation links from here include "dashboard"
+"hompage" and "log in/out."" A selactAllQuery for prompt like on the password generator(?) must include Navigation links
+so look at the museum examples for that. Since they are shown first there is no need to hide them--}}
 {{!-- // homeRoutes.js works with homepage.js and homepage handlebars with the post and reply models. --}}
