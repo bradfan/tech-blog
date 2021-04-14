@@ -9,6 +9,7 @@ const saveReply = async (event) => {
 
   if (content) {
     const response = await fetch("/api/post", {
+      // look at the route - too tired right now.
       method: "POST",
       body: JSON.stringify({ content }),
       headers: { "Content-Type": "application/json" },

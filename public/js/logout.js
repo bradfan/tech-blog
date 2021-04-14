@@ -1,5 +1,6 @@
 const logout = async () => {
-  alert();
+  alert("heard this");
+  // alert is for testing, will need to be removed.
   const response = await fetch('/api/users/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
