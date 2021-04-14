@@ -16,7 +16,7 @@ const savePost = async (event) => {
         body: JSON.stringify({ title, content, userId }),
         headers: { 'Content-Type': 'application/json' },
       });
-    //   document.location.replace("/dashboard")
+      document.location.replace("/dashboard")
     }
   };
 
