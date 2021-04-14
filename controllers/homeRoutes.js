@@ -39,14 +39,17 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.use(withAuth);
+// router.use(withAuth);
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
-   res.render("dashboard", {
-      user_id:req.session.user_id,
-      logged_in: req.session.logged_in,
-    });
+    const postData = await Post.findAll( {where: {user_id:req.session.user_id}})
+    //get all your posts using your req.session.user_id (hint where), store in a variable, send it with your handlebars
+    const posts = postData.map((post) => post.get({ plain:true}))
+
+   res.render("dashboard", 
+     {post:posts}
+    );
   } catch (err) {
     res.status(500).json(err);
   }
@@ -55,4 +58,4 @@ router.get("/dashboard", async (req, res) => {
 module.exports = router;
 
 // homeRoutes.js works with homepage.js and homepage handlebars with the post and reply models.
-// much of the existing code will be moved or deleted
+
