@@ -1,16 +1,16 @@
 {{!-- will be for individual posts and replies --}}
-{{!-- {{#each posts as |post| }} --}}
-<h1>linked</h1>
+
+
 {{#each posts}}
 <div class="row align-center mb-5">
   <div class="form-group">
 
-    <h2 id="post" data-user="{{user_id}}">{{user_id}}:</h2>
+    <h2 id="post" data-user="{{this.id}}">{{this.name}}:</h2>
     <div id="title">
-      <input class="submit-title" type="title" id="submit-title" />
+      <input class="submit-title" type="title" id="submit-title" value="{{this.title}}" />
     </div>
 
-    <textarea class="form-input" maxlength="500"></textarea>
+    <textarea class="form-input" maxlength="500">{{this.post}}</textarea>
     <button id="subpost" class="btn btn-primary" type="submit">Reply</button>
   </div>
 

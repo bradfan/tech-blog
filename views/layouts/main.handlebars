@@ -30,7 +30,8 @@
 
     {{#unless isLoggedIn}}
     <nav>
-      <h3><a href="/login">Login</a></h3>
+      <a href="/login">
+       <button class="btn">Login</button></a>
      
     </nav>
     {{/unless}}
@@ -41,6 +42,9 @@
       <button class="btn" id="logout">Logout</button>
     </nav>
     {{/if}}
+    {{#if isLoggedIn}}
+    I am logged in{{isLoggedIn}}
+    {{/if}} 
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}

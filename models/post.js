@@ -28,6 +28,7 @@ Post.init(
            type: DataTypes.INTEGER,
            foreignKey: true,
          }
+      
     },
     {
       sequelize,

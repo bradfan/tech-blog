@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
       users,
       posts,
       logged_in: req.session.logged_in,
-      isLoggedIn: true,
+      isLoggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -43,12 +43,17 @@ router.get("/login", (req, res) => {
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
-    const postData = await Post.findAll( {where: {user_id:req.session.user_id}})
+    console.log("Session", typeof req.session.user_id)
+    const postData = await Post.findAll( {
+      where: {id:req.session.user_id}
+    })
     //get all your posts using your req.session.user_id (hint where), store in a variable, send it with your handlebars
+    console.log("postData", postData)
     const posts = postData.map((post) => post.get({ plain:true}))
+    console.log("posts",posts)
 
    res.render("dashboard", 
-     {post:posts}
+     {posts:posts}
     );
   } catch (err) {
     res.status(500).json(err);

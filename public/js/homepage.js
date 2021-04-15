@@ -18,8 +18,12 @@ const saveReply = async (event) => {
   }
 };
 
-document.querySelector("#subpost").addEventListener("click", saveReply);
-
+const replyButtons = document.querySelectorAll(".post-reply")
+for (let index = 0; index < replyButtons.length; index++) {
+  const element = replyButtons[index];
+  element.addEventListener("click", saveReply);
+  
+}
 // create function to save reply and generate next reply box in "replyContainer" div
 
 // // homeRoutes.js works with homepage.js and homepage handlebars with the post and reply models.

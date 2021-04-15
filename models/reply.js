@@ -1,36 +1,39 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Reply extends Model {}
 
 Reply.init(
-    {
-        id:{
-          type: DataTypes.INTEGER,
-          // allowNull: false,
-          primaryKey: true,
-          autoIncrement: true,
-        },
-        name:{
-          type: DataTypes.STRING,
-          allowNull: false,  
-        },
-        reply:{
-          type: DataTypes.STRING,
-          allowNull: false, 
-         },
-         user_id: {
-           type: DataTypes.INTEGER,
-           foreignKey: true,
-         }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      // allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      modelName: "reply",
-    }
-)
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    reply: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      foreignKey: true,
+    },
+    // post_id: {
+    //   type: DataTypes.INTEGER,
+    //   foreignKey: true,
+    // },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    modelName: "reply",
+  }
+);
 
 module.exports = Reply;
