@@ -5,13 +5,18 @@ router.post("/test", async (req, res) => {
   res.json({ didIt: true });
 });
 router.post("/signup", async (req, res) => {
-  const userData = await User.create(req.body);
+  console.log("req.body :", req.body)
+  const userData = await User.create({
+    name: req.body.userName,
+    password: req.body.password
+  })
+
 
   req.session.save(() => {
     req.session.user_id = userData.id;
     req.session.logged_in = true;
     res.json({ user: userData, message: "You are logged in!" });
-  });
+  }); 
 });
 
 router.post("/login", async (req, res) => {
@@ -23,8 +28,10 @@ router.post("/login", async (req, res) => {
         message: `Incorrect user name and password; please try again`,
       });
     }
+     
 
     const userData = await User.findOne({
+      
       where: {
         name: req.body.userName,
       },
